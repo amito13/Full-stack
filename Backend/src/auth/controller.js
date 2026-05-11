@@ -19,8 +19,13 @@ class AuthController {
             //res.status(201).json({ ...newUser[0] });
              res.status(201).json({ ...newUser[0], token });
         } catch (error) {
-            res.status(400).json({ message: error.message });
-        }
+            console.log(error);
+
+            res.status(500).json({
+                message: "Something went wrong",
+                error: error.message,
+    });
+}
     }
     async handleLogin(req, res) {
         try {
