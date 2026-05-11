@@ -5,7 +5,7 @@ import cors from 'cors';
 export function createApp() {
     const app = express();
     app.use(cors({
-         origin: "http://localhost:5173"
+         origin: "https://regi-delta.vercel.app/",
     }));
     app.get('/health', (req, res) => {
         res.json({ status: 'OK' });
