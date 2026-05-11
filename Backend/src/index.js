@@ -3,8 +3,15 @@ import {createApp} from './app/index.js';
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import cors from 'cors';
- export const db = drizzle(process.env.DB);
+import pg from 'pg';
+const pool = new pg.Pool({
+  connectionString: process.env.DB,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
+export const db = drizzle(pool);
 async function main() {
    try{
      const app = createApp();
