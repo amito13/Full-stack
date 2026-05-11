@@ -1,4 +1,4 @@
-import { verifyToken } from "../uitilites/token";
+import { verifyToken } from "../utilities/token";
 
 export function authMiddleware() {
     return function(req, res, next) {

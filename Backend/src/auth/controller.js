@@ -2,7 +2,7 @@ import { LoginRequest, RegisterRequest } from "./models.js";
 import {db} from "../index.js";
 import {users} from "../db/schema.js";
 import { eq } from "drizzle-orm";
-import { createToken } from "../uitilites/token.js";
+import { createToken } from "../utilities/token.js";
 class AuthController {
     async handleRegister(req, res) {
         try {
